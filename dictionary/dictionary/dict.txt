@@ -1,0 +1,4 @@
+﻿кот cat
+дом house
+дерево tree
+компьютер computer
