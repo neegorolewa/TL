@@ -1,9 +1,4 @@
-﻿using System.Diagnostics.Tracing;
-using System.IO;
-using System.Xml.XPath;
-using static System.Net.Mime.MediaTypeNames;
-
-const string menu = "Выберите действие: \n" +
+﻿const string menu = "Выберите действие: \n" +
         $"(1) Добавить перевод\n" +
         $"(2) Удалить перевод\n" +
         $"(3) Изменить перевод\n" +
@@ -21,7 +16,7 @@ void Wait()
     Console.Clear();
 }
 
-async void AddTranslate()
+void AddTranslate()
 {
     Console.Write("Введите слово: ");
     var word = Console.ReadLine();
