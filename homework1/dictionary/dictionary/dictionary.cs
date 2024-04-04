@@ -15,45 +15,52 @@ class Program
 
     static void Main()
     {
-        Program program = new Program();
-        program.LoadDictionaryFromFile();
-        while (true)
+        try
         {
-            Console.WriteLine(MENU);
-            var choice = Console.ReadLine();
-
-            switch (choice)
+            Program program = new Program();
+            program.LoadDictionaryFromFile();
+            while (true)
             {
-                case "1":
-                    Console.Clear();
-                    program.AddTranslate();
-                    break;
-                case "2":
-                    Console.Clear();
-                    program.DeleteTranslate();
-                    break;
-                case "3":
-                    Console.Clear();
-                    program.ChangeTranslate();
-                    break;
-                case "4":
-                    Console.Clear();
-                    program.TranslateWord();
-                    break;
-                case "5":
-                    Console.Clear();
-                    Console.Write("Хотите сохранить изменения в словаре? Введите y для сохранения перед выходом.: \n");
-                    var saveChanges = Console.ReadLine();
-                    if (saveChanges == "y")
-                    {
-                        program.SaveDictionary();
-                        Console.WriteLine("Изменения успешно сохранены");
-                    }
-                    return;
-                default:
-                    Console.WriteLine("Неверно введено действие...");
-                    continue;
+                Console.WriteLine(MENU);
+                var choice = Console.ReadLine();
+
+                switch (choice)
+                {
+                    case "1":
+                        Console.Clear();
+                        program.AddTranslate();
+                        break;
+                    case "2":
+                        Console.Clear();
+                        program.DeleteTranslate();
+                        break;
+                    case "3":
+                        Console.Clear();
+                        program.ChangeTranslate();
+                        break;
+                    case "4":
+                        Console.Clear();
+                        program.TranslateWord();
+                        break;
+                    case "5":
+                        Console.Clear();
+                        Console.Write("Хотите сохранить изменения в словаре? Введите y для сохранения перед выходом.: \n");
+                        var saveChanges = Console.ReadLine();
+                        if (saveChanges == "y")
+                        {
+                            program.SaveDictionary();
+                            Console.WriteLine("Изменения успешно сохранены");
+                        }
+                        return;
+                    default:
+                        Console.WriteLine("Неверно введено действие...");
+                        continue;
+                }
             }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Произошла ошибка: {ex.Message}");
         }
     }
 
