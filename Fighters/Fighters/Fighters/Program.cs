@@ -1,1 +1,10 @@
-﻿Console.WriteLine("Проверка работы ветвей");
+﻿namespace Fighters
+{
+    public class Program
+    {
+        public static void Main() 
+        {
+
+        }
+    }
+}
