@@ -14,6 +14,8 @@ namespace Fighters.Models.Fighters
         public IWeapon Weapon { get; }
         public IRace Race { get; }
         public IArmor Armor { get; }
+        public int Power { get; }
+        public int CurrentArmor { get; }
 
         public void TakeDamage(int damage);
         public int CalculateDamage();
